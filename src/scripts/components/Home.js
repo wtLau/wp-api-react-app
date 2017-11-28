@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import DataStore from '../flux/actions/DataActions.js';
+import DataStore from 'flux/stores/DataStore.js'
 
 export default class Home extends Component {
     render() {
-        let allData = DataStore;
+        let allData = DataStore.getAll();
         console.log(allData);
 
         return (

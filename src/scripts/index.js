@@ -1,5 +1,5 @@
 import { render } from 'react-dom';
-import DataActions from './flux/actions/DataActions.js';
+import DataActions from 'flux/actions/DataActions.js';
 import Home from 'components/Home.js';
 
 import {
