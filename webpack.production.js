@@ -3,14 +3,11 @@ var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: 'cheap-module-source-map',
+    devtool: 'source-map',
     devServer: {
         historyApiFallback: true, // This will make the server understand "/some-link" routs instead of "/#/some-link"
     },
     entry: [
-        'babel-polyfill',
-        'webpack-dev-server/client?http://127.0.0.1:8080/', // Specify the local server port
-        'webpack/hot/only-dev-server', // Enable hot reloading
         './src/scripts' // This is where Webpack will be looking for the entry index.js file
     ],
     output: {
@@ -58,7 +55,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(), // Hot reloading
         new webpack.NoEmitOnErrorsPlugin(), // Webpack will let you know if there are any errors
 
         // Declare global variables
@@ -71,8 +67,14 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
-            hash: false
-        })
+            hash: true
+        }),
+
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            sourceMap: true
+        }),
     ]
 }
-view rawwebpack.dev.js hosted with ❤ by GitHub
