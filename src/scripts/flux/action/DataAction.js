@@ -4,7 +4,7 @@ import alt from 'flux/alt/alt.js';
 class DataActions {
 
     constructor() {
-        const appUrl = 'http://wordpress-installation-example-url.com'; // Wordpress installation url
+        const appUrl = 'http://localhost:8888/south-granville/'; // Wordpress installation url
 
         this.pagesEndPoint = `${appUrl}/wp-json/wp/v2/pages`; // Endpoint for getting Wordpress Pages
         this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts`; // Endpoint for getting Wordpress Posts

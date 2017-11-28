@@ -9,7 +9,7 @@
         "build": "npm run clean && webpack -p --progress --config webpack.production.js",
         "clean": "rimraf ./build/*"
     },
-    "author": "",
+    "author": "https://medium.freecodecamp.org/how-to-build-react-apps-on-top-of-the-wordpress-rest-api-bcc632808025",
     "license": "ISC",
     "dependencies": {
         "alt": "^0.18.6",
