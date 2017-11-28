@@ -12,18 +12,20 @@ import {
 class AppInitializer {
 
     run() {
-        render(
-            <Router>
-                <div>
-                    <Switch>
-                        <Route path="/" component={Home} exact />
-                        <Route render={() => { return <Redirect to="/" /> }} />
-                    </Switch>
-                </div>
-            </Router>
+        DataActions.getPages((response) => {
+            render(
+                <Router>
+                    <div>
+                        <Switch>
+                            <Route path="/" component={Home} exact />
+                            <Route render={() => { return <Redirect to="/" /> }} />
+                        </Switch>
+                    </div>
+                </Router>
 
-            , document.getElementById('app')
-        );
+                , document.getElementById('app')
+            );
+        })
     }
 }
 
